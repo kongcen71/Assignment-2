@@ -1,0 +1,508 @@
+{
+	"info": {
+		"_postman_id": "771089d2-5621-4920-b67a-23053e79cd1d",
+		"name": "assignment1-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/greeting",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:7000/greeting",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"greeting"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/greeting",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:7000/greeting",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"greeting"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.5"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Jan 2022 05:38:15 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "This an assignment for COM5940"
+				}
+			]
+		},
+		{
+			"name": "/creatUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"kk3\",\r\n    \"password\":\"333333\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:7000/creatUser",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"creatUser"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/creatUser",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"kk\",\r\n    \"password\":\"0521\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:7000/creatUser",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"creatUser"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "32"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.5"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 17 Jan 2022 11:05:41 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"New user created!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/login",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "kk",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "0521",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:7000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/login",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:7000/login",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "240"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.5"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 17 Jan 2022 11:19:55 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Your ID\": \"69e717e2-b28a-4fdc-b503-670a51e4e9ba\",\n    \"Your token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiI2OWU3MTdlMi1iMjhhLTRmZGMtYjUwMy02NzBhNTFlNGU5YmEiLCJleHAiOjE2NDI0MjAxOTV9.EiAZwbMUoOO2b5VK27nLlSo5Mgm0a-3Zj5ath0Lxjgs\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/user/<public_id>",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "client-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiI2OWU3MTdlMi1iMjhhLTRmZGMtYjUwMy02NzBhNTFlNGU5YmEiLCJleHAiOjE2NDI0MjAxOTV9.EiAZwbMUoOO2b5VK27nLlSo5Mgm0a-3Zj5ath0Lxjgs",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:7000/user/69e717e2-b28a-4fdc-b503-670a51e4e9ba",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"user",
+						"69e717e2-b28a-4fdc-b503-670a51e4e9ba"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/user/<public_id>",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "client-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiI2OWU3MTdlMi1iMjhhLTRmZGMtYjUwMy02NzBhNTFlNGU5YmEiLCJleHAiOjE2NDI0MjAxOTV9.EiAZwbMUoOO2b5VK27nLlSo5Mgm0a-3Zj5ath0Lxjgs",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:7000/user/69e717e2-b28a-4fdc-b503-670a51e4e9ba",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"user",
+								"69e717e2-b28a-4fdc-b503-670a51e4e9ba"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "165"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.5"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 17 Jan 2022 11:20:44 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"admin\": false,\n        \"name\": \"kk\",\n        \"password\": \"b'$2b$12$RFewyKcRkafv14.7O.bOEOIrEu2eeJDsczq7F28DP7F58CBNPp0ca'\",\n        \"public_id\": \"69e717e2-b28a-4fdc-b503-670a51e4e9ba\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "/user_password/<public_id>",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "client-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiI2OWU3MTdlMi1iMjhhLTRmZGMtYjUwMy02NzBhNTFlNGU5YmEiLCJleHAiOjE2NDI0MjAxOTV9.EiAZwbMUoOO2b5VK27nLlSo5Mgm0a-3Zj5ath0Lxjgs",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"password\": \"05210521\"}"
+				},
+				"url": {
+					"raw": "localhost:7000/user_password/69e717e2-b28a-4fdc-b503-670a51e4e9ba",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"user_password",
+						"69e717e2-b28a-4fdc-b503-670a51e4e9ba"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/user_password/<public_id>",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "client-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiI2OWU3MTdlMi1iMjhhLTRmZGMtYjUwMy02NzBhNTFlNGU5YmEiLCJleHAiOjE2NDI0MjAxOTV9.EiAZwbMUoOO2b5VK27nLlSo5Mgm0a-3Zj5ath0Lxjgs",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"password\": \"05210521\"}"
+						},
+						"url": {
+							"raw": "localhost:7000/user_password/69e717e2-b28a-4fdc-b503-670a51e4e9ba",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"user_password",
+								"69e717e2-b28a-4fdc-b503-670a51e4e9ba"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "58"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.5"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 17 Jan 2022 11:21:33 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"The password has been changed to '05210521'\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/user_delete/<public_id>",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "client-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiI2OWU3MTdlMi1iMjhhLTRmZGMtYjUwMy02NzBhNTFlNGU5YmEiLCJleHAiOjE2NDI0MjAxOTV9.EiAZwbMUoOO2b5VK27nLlSo5Mgm0a-3Zj5ath0Lxjgs",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:7000/user_delete/69e717e2-b28a-4fdc-b503-670a51e4e9ba",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"user_delete",
+						"69e717e2-b28a-4fdc-b503-670a51e4e9ba"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/user_delete/<public_id>",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "client-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiI2OWU3MTdlMi1iMjhhLTRmZGMtYjUwMy02NzBhNTFlNGU5YmEiLCJleHAiOjE2NDI0MjAxOTV9.EiAZwbMUoOO2b5VK27nLlSo5Mgm0a-3Zj5ath0Lxjgs",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:7000/user_delete/69e717e2-b28a-4fdc-b503-670a51e4e9ba",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"user_delete",
+								"69e717e2-b28a-4fdc-b503-670a51e4e9ba"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.5"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 17 Jan 2022 11:22:01 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"'kk' has been deleted!\"\n}"
+				}
+			]
+		}
+	]
+}
